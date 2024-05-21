@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}Owner Details{% endblock title %}
+
+{% block content %}
+  <h1 class="display-3 mb-3">Owner Details</h1>
+
+  <div class="card shadow">
+    <div class="card-body">
+      <h2 class="display-4 card-title">
+        {{ owner.first_name }} {{ owner.last_name }}
+      </h2>
+      {% if owner.pets|length == 0 %}
+        <p class="card-text">This owner has no pets.</p>
+      {% else %}
+        <ul>
+          {% for pet in owner.pets %}
+            <li>{{ pet.name }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,31 @@
+{
+  "name": "bonus-session-05-19",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "prettier": "^3.2.5",
+    "prettier-plugin-jinja-template": "^1.4.0"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-jinja-template"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "*.html"
+        ],
+        "options": {
+          "parser": "jinja-template"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "[jinja-html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2
+  },
+  "css.styleSheets": [
+    "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  ],
+  "files.associations": {
+    "*.html": "jinja-html"
+  },
+  "emmet.includeLanguages": {
+    "jinja-html": "html"
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#8fc6f4",
+    "activityBar.background": "#8fc6f4",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#eb3498",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#8fc6f4",
+    "statusBar.background": "#61afef",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#3398ea",
+    "statusBarItem.remoteBackground": "#61afef",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#61afef",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#61afef99",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#61afef"
+}

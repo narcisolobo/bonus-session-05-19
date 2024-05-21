@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block title %}All Owners{% endblock title %}
+
+{% block content %}
+  <h1 class="display-3 mb-3">All Owners</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>First name:</th>
+        <th>Last name:</th>
+        <th>Actions:</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for owner in owners %}
+        <tr>
+          <td class="align-middle">{{ owner.first_name }}</td>
+          <td class="align-middle">{{ owner.last_name }}</td>
+          <td class="align-middle">
+            <a
+              href="/owners/{{ owner.id }}"
+              class="btn btn-sm btn-primary me-2"
+            >
+              View
+            </a>
+            <a
+              href="/owners/{{ owner.id }}/edit"
+              class="btn btn-sm btn-warning me-2"
+            >
+              Edit
+            </a>
+            <a
+              href="/owners/{{ owner.id }}/delete"
+              class="btn btn-sm btn-danger"
+            >
+              Delete
+            </a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock content %}

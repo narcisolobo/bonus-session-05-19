@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block title %}Pet Details{% endblock title %}
+
+{% block content %}
+  <h1 class="display-3 mb-3">Pet Details</h1>
+
+  <div class="card shadow">
+    <div class="card-body">
+      <h2 class="display-4 card-title">{{ pet.name }}</h2>
+      <h3 class="display-5 card-subtitle mb-3">
+        Owner: {{ pet.owner.first_name }}
+      </h3>
+      <p class="card-text">
+        <strong>Type:</strong>
+        {{ pet.type }}
+      </p>
+      <p class="card-text">
+        <strong>Is this pet derpy?</strong>
+        {{ 'Yes' if pet.is_derpy else 'No' }}
+      </p>
+      <p class="card-text">
+        <strong>Boops:</strong>
+        {{ pet.boops|length }}
+      </p>
+      <form action="/boops/create" method="post">
+        <input type="hidden" name="pet_id" value="{{ pet.id }}" />
+        <div class="form-floating mb-3">
+          <select name="owner_id" id="owner_id" class="form-select">
+            {% for owner in owners %}
+              <option value="{{ owner.id }}">
+                {{ owner.first_name }} {{ owner.last_name }}
+              </option>
+            {% endfor %}
+          </select>
+          <label for="owner_id">Choose an owner to boop this pet.</label>
+        </div>
+        <div class="text-end">
+          <button type="submit" class="btn btn-primary">BOOP!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock content %}

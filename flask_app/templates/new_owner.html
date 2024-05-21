@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% block title %}Add an Owner{% endblock title %}
+
+{% block content %}
+  <h1 class="display-3 mb-3">Add a New Owner</h1>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          role="alert"
+        >
+          {{ message }}
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <div class="card shadow">
+    <div class="card-body">
+      <form action="/owners/create" method="post">
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            name="first_name"
+            id="first_name"
+            class="form-control"
+            placeholder="First name:"
+          />
+          <label for="first_name">First name:</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            name="last_name"
+            id="last_name"
+            class="form-control"
+            placeholder="Last name:"
+          />
+          <label for="last_name">Last name:</label>
+        </div>
+        <div class="text-end">
+          <button type="submit" class="btn btn-primary">Add Owner</button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock content %}
